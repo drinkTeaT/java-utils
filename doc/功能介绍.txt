@@ -1,0 +1,11 @@
+1 自动执行sql
+1.1 LocalDataSourceLoader加载具体的数据库名
+1.2 将执行 /META-INF/schema.sql的语句
+1.3 application.yml配置数据库
+
+异常:
+一 问：启动时报java.sql.SQLException: The server time zone value '�й���׼ʱ��' is unrecognized or represents more than one time zone.错误。
+答：将mysql-connector-java版本配置为5.1.47
+
+2 根据配置指定加载的文件
+2.1 application.yml指定uat则加载application-uat.yml的配置
