@@ -9,3 +9,25 @@
 
 2 根据配置指定加载的文件
 2.1 application.yml指定uat则加载application-uat.yml的配置
+
+3 代码自动生成器
+CodeGenerator
+
+4 分页插件
+4.1
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+4.2
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+4.3
+PageHelper.startPage(1, 1);
+result = mapper.query();
+PageInfo<Country> pageInfo = new PageInfo<>(result);
